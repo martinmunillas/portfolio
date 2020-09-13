@@ -17,20 +17,20 @@ export default {
     ["I'm Martin Munilla, I've been working in the software/web development since 2017, I started using tools like Wordpress but stopped using them to learn new technologies and become a full stack developer.",
     "At the moment my favourite stack is MERN(MongoDB, ExpressJS, ReactJS, NodeJS) but i know other tools as well and i'm also always open to learn new stuff "],
   aboutImage:
-    'https://images.unsplash.com/photo-1521587765099-8835e7201186?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+    'http://localhost:3000/static/personalPhoto.png',
   //Change This To Hide The Image of About Section (True Or False)
   ShowAboutImage: true, //true or false (Change Here)
   // Change Projects Here
   projects: [
     {
       id: 1, //DO NOT CHANGE THIS (Please)😅
-      title: 'Ecommerce App', //Project Title - Add Your Project Title Here
+      title: 'Muniflix', //Project Title - Add Your Project Title Here
       service: 'Backend & Frontend', // Add Your Service Type Here
       //Project Image - Add Your Project Image Here
       imageSrc:
-        'https://images.unsplash.com/photo-1558104631-0fa41a8f6c20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+      'http://localhost:3000/static/muniflix.png',
       //Project URL - Add Your Project Url Here
-      url: 'http://chetanverma.com/',
+      url: 'https://muniflix-app.herokuapp.com/',
     },
     {
       id: 2, //DO NOT CHANGE THIS (Please)😅

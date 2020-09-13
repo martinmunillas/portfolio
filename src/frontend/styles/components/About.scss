@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.about__content {
+    width: 60%;
+}
+
+.about__content--title {
+    font-size: 5em;
+    margin-bottom: 40px;
+}
+
+.about__content--text {
+    font-size: 1.3em;
+}
+
+.about__image {
+    width: 30%;
+    align-self: flex-end;
+}

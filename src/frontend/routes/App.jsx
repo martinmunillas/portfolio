@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import ProjectPage from '../pages/ProjectPage';
+import routes from '../../server/routes';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/project/:id" component={ProjectPage} />
+        {routes.map((route) => (
+          <Route {...route} key={route.path} />
+        ))}
       </Switch>
     </BrowserRouter>
   );
