@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { Router } from 'react-router-dom';
 
-import App from './routes/app';
+import App from './routes/App';
 import reducer from './redux/reducer';
 
 const history = createBrowserHistory();
