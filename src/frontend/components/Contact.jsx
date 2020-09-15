@@ -9,23 +9,42 @@ class Contact extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div>
-        <h1>
+      <div className='contact'>
+        <h1 className='contact__header'>
           <Fade bottom cascade>
-            {' '}
             Contact.
           </Fade>
         </h1>
         <Fade bottom>
-          <div className='contact-content'>
-            <h1>
+          <div className='contact__content'>
+            <h1 className='contact__content--title'>
               Let’s create your next<br></br>
-              <span className='amazing-color'>experience together</span>
+              <span className='contact__content--title__amazingText'>
+                experience together
+              </span>
             </h1>
-            <a href={`mailto:${data.contactEmail}`} className='email'>
-              {data.contactEmail}
-            </a>
-            <ul>
+            <p className='contact__content--email'>{data.contactEmail}</p>
+            <form className='contact__content--form'>
+              <h1 className='contact__content--form__formName'>
+                Leave me a message
+              </h1>
+              <div className='contact__content--form__fields'>
+                <div>
+                  <label>Name</label>
+                  <input type='text' />
+                  <label>Email</label>
+                  <input type='text' />
+                </div>
+                <div>
+                  <label>Message</label>
+                  <textarea type='text' />
+                </div>
+              </div>
+              <button type='submit' className='contact__content--form__submit'>
+                Send
+              </button>
+            </form>
+            <ul className='contact__content--social'>
               {data.social.map((link, index) => (
                 <li key={index}>
                   <a target='_blank' rel='noopener noreferrer' href={link.url}>

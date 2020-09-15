@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import Project from './Project';
+import ProjectItem from './ProjectItem';
 import Fade from 'react-reveal/Fade';
 import { connect } from 'react-redux';
 
-class Work extends Component {
+import '../styles/components/Projects.scss';
+
+class Projects extends Component {
   state = {};
   render() {
     const { data } = this.props;
     return (
-      <div>
-        <h1 className='heading'>
+      <div className='projects'>
+        <h1 className='projects__heading'>
           <Fade bottom cascade>
             Projects.
           </Fade>
         </h1>
-        <div className='work-content'>
+        <div className='projects__content'>
           {data.projects.map((project) => (
-            <Project
+            <ProjectItem
               key={project.id}
               title={project.title}
               service={project.service}
               imageSrc={project.imageSrc}
               url={project.url}
-            ></Project>
+            />
           ))}
         </div>
       </div>
@@ -36,4 +38,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Work);
+export default connect(mapStateToProps, null)(Projects);

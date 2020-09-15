@@ -1,0 +1,18 @@
+.projectItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.projectItem__image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 0 0;
+    border-radius: 30px;
+}
+
+.projectItem__title {
+    margin: 10px 0;
+}
