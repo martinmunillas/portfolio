@@ -4,7 +4,7 @@ import ProjectPage from '../../frontend/pages/ProjectPage';
 
 const routes = [
   { exact: true, path: '/', component: Home },
-  { exact: true, path: '/project/:id', component: ProjectPage },
+  { exact: true, path: '/projects/:id', component: ProjectPage },
 ];
 
 export default routes

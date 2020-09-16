@@ -5,12 +5,12 @@
 }
 
 .contact__header {
-  font-size: 5rem;
+  font-size: $bigTitles_size;
   margin-bottom: 40px;
 }
 
 .contact__content--title {
-  font-size: 5rem;
+  font-size: $bigTitles_size;
 }
 
 .contact__content--title__amazingText {
@@ -24,7 +24,7 @@
 }
 .contact__content--email {
   margin: 80px 0;
-  font-size: 2rem;
+  font-size: $midSmallTitles_size;
   text-decoration: underline;
 }
 

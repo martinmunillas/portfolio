@@ -13,11 +13,11 @@ export default {
   //Contact Email
   contactEmail: 'contact@martinmunilla.com',
   // Add Your About Text Here
-  abouttext:
-    ["I'm Martin Munilla, I've been working in the software/web development since 2017, I started using tools like Wordpress but stopped using them to learn new technologies and become a full stack developer.",
-    "At the moment my favourite stack is MERN(MongoDB, ExpressJS, ReactJS, NodeJS) but i know other tools as well and i'm also always open to learn new stuff "],
-  aboutImage:
-    'http://localhost:3000/static/personalPhoto.png',
+  abouttext: [
+    "I'm Martin Munilla, I've been working in the software/web development since 2017, I started using tools like Wordpress but stopped using them to learn new technologies and become a full stack developer.",
+    "At the moment my favourite stack is MERN(MongoDB, ExpressJS, ReactJS, NodeJS) but i know other tools as well and i'm also always open to learn new stuff ",
+  ],
+  aboutImage: 'http://localhost:3000/static/personalPhoto.png',
   //Change This To Hide The Image of About Section (True Or False)
   ShowAboutImage: true, //true or false (Change Here)
   // Change Projects Here
@@ -27,18 +27,38 @@ export default {
       title: 'Muniflix', //Project Title - Add Your Project Title Here
       service: 'Backend & Frontend', // Add Your Service Type Here
       //Project Image - Add Your Project Image Here
-      imageSrc:
-      'http://localhost:3000/static/muniflix.png',
+      imageSrc: 'http://localhost:3000/static/muniflix.png',
       //Project URL - Add Your Project Url Here
-      url: 'https://muniflix-app.herokuapp.com/',
+      appUrl: 'https://muniflix-app.herokuapp.com/',
+      repository: [
+        {
+          url: 'https://github.com/martinmunillas/Muniflix-App',
+          name: 'App Repository',
+        },
+        {
+          url: 'https://github.com/martinmunillas/MuniFlix-Api',
+          name: 'API Repository',
+        },
+      ],
     },
     {
       id: 2, //DO NOT CHANGE THIS (Please)😅
       title: 'Project Two',
       service: 'Website Development',
+      description: `Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.Suspendisse non nisl sit amet velit hendrerit rutrum. Nunc nec neque.Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Maecenas malesuada.`,
       imageSrc:
         'https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      url: 'http://chetanverma.com/',
+      appUrl: 'https://muniflix-app.herokuapp.com/',
+      repository: [
+        {
+          url: 'https://github.com/martinmunillas/Muniflix-App',
+          name: 'App Repository',
+        },
+        {
+          url: 'https://github.com/martinmunillas/MuniFlix-Api',
+          name: 'API Repository',
+        },
+      ],
     },
     {
       id: 3, //DO NOT CHANGE THIS (Please)😅
@@ -46,7 +66,17 @@ export default {
       service: 'Web App',
       imageSrc:
         'https://images.unsplash.com/photo-1511500118080-275313ec90a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      url: 'http://chetanverma.com/',
+      appUrl: 'https://muniflix-app.herokuapp.com/',
+      repository: [
+        {
+          url: 'https://github.com/martinmunillas/Muniflix-App',
+          name: 'App Repository',
+        },
+        {
+          url: 'https://github.com/martinmunillas/MuniFlix-Api',
+          name: 'API Repository',
+        },
+      ],
     },
     {
       id: 4, //DO NOT CHANGE THIS (Please)😅
@@ -54,7 +84,17 @@ export default {
       service: 'Branding',
       imageSrc:
         'https://images.unsplash.com/photo-1558452919-08ae4aea8e29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-      url: 'http://chetanverma.com/',
+      appUrl: 'https://muniflix-app.herokuapp.com/',
+      repository: [
+        {
+          url: 'https://github.com/martinmunillas/Muniflix-App',
+          name: 'App Repository',
+        },
+        {
+          url: 'https://github.com/martinmunillas/MuniFlix-Api',
+          name: 'API Repository',
+        },
+      ],
     },
 
     /*

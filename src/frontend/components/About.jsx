@@ -18,10 +18,11 @@ class About extends Component {
           </h1>
           <Fade bottom>
             <p className='about__content--text'>
-              {data.abouttext.map((paragraph) => (
-                <>
-                  <br /><br /> {paragraph}
-                </>
+              {data.abouttext.map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  <br />
+                  <br /> {paragraph}
+                </React.Fragment>
               ))}
             </p>
           </Fade>

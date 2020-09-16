@@ -17,14 +17,8 @@ class Projects extends Component {
           </Fade>
         </h1>
         <div className='projects__content'>
-          {data.projects.map((project) => (
-            <ProjectItem
-              key={project.id}
-              title={project.title}
-              service={project.service}
-              imageSrc={project.imageSrc}
-              url={project.url}
-            />
+          {data.projects.map((project, index) => (
+            <ProjectItem {...project} key={index}/>
           ))}
         </div>
       </div>

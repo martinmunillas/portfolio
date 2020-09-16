@@ -7,8 +7,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        {routes.map((route) => (
-          <Route {...route} key={route.path} />
+        {routes.map((route, index) => (
+          <Route {...route} key={index} />
         ))}
       </Switch>
     </BrowserRouter>

@@ -1,15 +1,5 @@
 @import '../Vars.scss';
 
-// .backgroundWord {
-//     position: fixed;
-//     opacity: 0.05;
-//     font-size: 24em;
-//     left: -0.2em;
-//     top: 20vh;
-//     z-index: -100;
-//     color: #96c7ee;
-//   }
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -36,7 +26,7 @@
 
 .hero__text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3em;
+  font-size: $midBigTitles_size;
 }
 
 .hero__buttons {
