@@ -5,10 +5,10 @@ export default {
     'Software Developer',
     'from Chile',
   ],
-  contactEmail: 'contact@martinmunilla.com',
+  contactEmail: 'martinmunillas@gmail.com',
   abouttext: [
     "I'm Martin Munilla, I've been working in the software/web development since 2017, I started using tools like Wordpress but stopped using them to learn new technologies and become a full stack developer.",
-    "At the moment my favourite stack is MERN(MongoDB, ExpressJS, ReactJS, NodeJS) but i know other tools as well and i'm also always open to learn new stuff ",
+    "At the moment my favourite stack is MERN(MongoDB, ExpressJS, ReactJS, NodeJS) but i know other tools as well and i'm also always open to learn new stuff.",
   ],
   aboutImage: 'https://i.ibb.co/qs8RQyB/personal.png',
   ShowAboutImage: true,
