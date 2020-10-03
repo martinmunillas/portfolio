@@ -29,7 +29,7 @@ class Hero extends Component {
             <button className='hero__buttons--buton downloadButton'>
               <a
                 rel='noopener noreferrer'
-                href='https://pdfhost.io/v/DpepcDoF7_Martin_Munilla_Plain_Resumepdf.pdf'
+                href='https://docs.google.com/document/d/1VtDak32NpfYqmCqVW9GZ83qaxuV0V-Fw0_bCkPOAU3k/export?format=pdf'
                 target='_blank'
               >
                 Download CV
