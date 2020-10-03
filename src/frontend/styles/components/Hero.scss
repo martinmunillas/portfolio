@@ -5,62 +5,76 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+  }
+
+  &__logo h1 {
+    margin-left: -30px;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 2em 0;
+  }
+
+  &__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $midFont_size;
+  }
+
+  &__buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__buttons--buton {
+    cursor: pointer;
+    width: 200px;
+    border: 0px;
+    border-radius: 25px;
+    margin: 10px 0;
+    padding: 1em 3em;
+    margin-right: 20px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+  }
+
+  &__buttons--buton:hover {
+    opacity: 0.8;
+  }
+
+  &__buttons--buton a {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  .contactButton {
+    background-color: $blue_color;
+  }
+
+  .downloadButton {
+    background-color: #222222;
+  }
 }
 
-.hero__logo {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  top: 60px;
-  left: 20%;
-}
-
-.hero__logo h1 {
-  margin-left: -30px;
-  font-size: 1em;
-  font-weight: 400;
-  padding: 2em 0;
-}
-
-.hero__text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: $midBigTitles_size;
-}
-
-.hero__buttons {
-  margin-top: 30px;
-}
-
-.hero__buttons--buton {
-  cursor: pointer;
-  width: 200px;
-  border: 0px;
-  border-radius: 25px;
-  padding: 1em 3em;
-  margin-right: 20px;
-  transition: all 0.2s ease-out;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-}
-
-.hero__buttons--buton:hover {
-  opacity: 0.8;
-}
-
-.hero__buttons--buton a {
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  text-decoration: none;
-}
-
-.contactButton {
-  background-color: $blue_color;
-}
-
-.downloadButton {
-  background-color: #222222;
+@media(max-width: 768px) {
+  .hero {
+    &__text {
+      font-size: $smallFont_size;
+    }
+    &__buttons {
+      justify-content: center;
+    }
+  }
 }

@@ -9,3 +9,12 @@
     left: -5rem;
     opacity: 0.03;
 }
+
+@media(max-width: 768px) {
+    .background {
+
+    top: 40%;
+    left: -3rem;
+    font-size: 7rem;
+    }
+}

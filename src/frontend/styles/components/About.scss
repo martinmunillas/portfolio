@@ -1,23 +1,49 @@
+@import '../Vars.scss';
+
 .about {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-}
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
 
-.about__content {
+  &__content {
     width: 60%;
-}
 
-.about__content--title {
-    font-size: 5em;
-    margin-bottom: 40px;
-}
+    &--title {
+      font-size: $bigFont_size;
+      margin-bottom: 40px;
+    }
 
-.about__content--text {
-    font-size: 1.3em;
-}
+    &--text {
+      font-size: $smallFont_size;
+    }
+  }
 
-.about__image {
+  &__image {
     width: 30%;
     align-self: flex-end;
+
+    img {
+      border-radius: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    &__content {
+      &--title {
+        font-size: $smallFont_size * 2;
+        margin-top: 75px;
+        margin-bottom: 0px;
+      }
+
+      &--text {
+        font-size: $xsmallFont_size;
+        width: 150%;
+      }
+    }
+    &__image {
+      align-self: flex-start;
+    }
+  }
 }

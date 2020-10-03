@@ -2,91 +2,56 @@
 
 .contact {
   margin-top: 50px;
+
+  &__header {
+    font-size: $bigFont_size;
+    margin-bottom: 40px;
+  }
+  &__content {
+    &--title {
+      font-size: $bigFont_size;
+    }
+
+    &--title__amazingText {
+      color: $red_color;
+    }
+
+    &--title__amazingText:hover {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: thin;
+      -webkit-font-smoothing: antialiased;
+    }
+    &--email {
+      margin: 80px 0;
+      font-size: $midFont_size;
+      text-decoration: underline;
+    }
+
+    &--social {
+      display: flex;
+      margin: 50px 0;
+    }
+
+    &--social li {
+      list-style: none;
+      margin: 0 20px;
+    }
+  }
 }
 
-.contact__header {
-  font-size: $bigTitles_size;
-  margin-bottom: 40px;
-}
-
-.contact__content--title {
-  font-size: $bigTitles_size;
-}
-
-.contact__content--title__amazingText {
-  color: $red_color;
-}
-
-.contact__content--title__amazingText:hover {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: thin;
-  -webkit-font-smoothing: antialiased;
-}
-.contact__content--email {
-  margin: 80px 0;
-  font-size: $midSmallTitles_size;
-  text-decoration: underline;
-}
-
-.contact__content--form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: #222;
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
-}
-
-.contact__content--form__formName {
-  align-self: flex-start;
-}
-
-.contact__content--form__fields {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.contact__content--form__fields div {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
-}
-
-.contact__content--form__fields textarea {
-  height: 100%;
-  border-radius: 20px 20px 0 20px;
-  border: none;
-}
-
-.contact__content--form__fields label {
-  margin: 20px 0 10px 0;
-}
-
-.contact__content--form__fields input {
-  border-radius: 20px;
-  height: 40px;
-  border: none;
-}
-
-.contact__content--form__submit {
-  margin: 20px;
-  width: 100px;
-  height: 40px;
-  color: white;
-  background-color: $blue_color;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.contact__content--social {
-  display: flex;
-  margin: 50px 0;
-}
-
-.contact__content--social li {
-  list-style: none;
-  margin: 0 20px;
+@media (max-width: 768px) {
+  .contact {
+    &__header {
+      font-size: $midFont_size;
+    }
+    &__content {
+      &--title {
+        font-size: $midFont_size;
+      }
+      &--email {
+        margin: 40px 0;
+        font-size: $smallFont_size;
+      }
+    }
+  }
 }

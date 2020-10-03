@@ -13,7 +13,8 @@ const ProjectPage = (props) => {
     service,
     description,
     imageSrc,
-    appUrl,
+    mainUrl,
+    mainButton,
     repository,
   } = props.projects.find((project) => project.id == id);
   return (
@@ -38,9 +39,9 @@ const ProjectPage = (props) => {
                 </button>
               </a>
             ))}
-            <a href={appUrl} target='_blank' rel='noopener noreferrer'>
+            <a href={mainUrl} target='_blank' rel='noopener noreferrer'>
               <button className='projectPage__hero--buttons__appButton'>
-                Open app preview
+                {mainButton}
               </button>
             </a>
           </div>

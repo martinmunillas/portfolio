@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import { connect } from 'react-redux';
 
+import MessageForm from './MessageForm';
+
 import '../styles/components/Contact.scss';
 
 class Contact extends Component {
@@ -24,26 +26,7 @@ class Contact extends Component {
               </span>
             </h1>
             <p className='contact__content--email'>{data.contactEmail}</p>
-            <form className='contact__content--form'>
-              <h1 className='contact__content--form__formName'>
-                Leave me a message
-              </h1>
-              <div className='contact__content--form__fields'>
-                <div>
-                  <label>Name</label>
-                  <input type='text' />
-                  <label>Email</label>
-                  <input type='text' />
-                </div>
-                <div>
-                  <label>Message</label>
-                  <textarea type='text' />
-                </div>
-              </div>
-              <button type='submit' className='contact__content--form__submit'>
-                Send
-              </button>
-            </form>
+            <MessageForm />
             <ul className='contact__content--social'>
               {data.social.map((link, index) => (
                 <li key={index}>
