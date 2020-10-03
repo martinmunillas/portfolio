@@ -20,14 +20,20 @@ class Hero extends Component {
         </header>
         <Fade bottom>
           <p className='hero__text'>{data.headerTagline.join(' ')}</p>
-          <div className="hero__buttons">
+          <div className='hero__buttons'>
             <button className='hero__buttons--buton contactButton'>
               <a href={`mailto:${data.contactEmail}`} rel='noopener noreferrer'>
                 Contact
               </a>
             </button>
             <button className='hero__buttons--buton downloadButton'>
-              <a rel='noopener noreferrer'>Download CV</a>
+              <a
+                rel='noopener noreferrer'
+                href='https://pdfhost.io/v/DpepcDoF7_Martin_Munilla_Plain_Resumepdf.pdf'
+                target='_blank'
+              >
+                Download CV
+              </a>
             </button>
           </div>
         </Fade>
