@@ -72,6 +72,7 @@
   .hero {
     &__text {
       font-size: $smallFont_size;
+      text-align: center;
     }
     &__buttons {
       justify-content: center;
