@@ -1,0 +1,25 @@
+@import '../Vars.scss';
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  h1 {
+    font-size: $bigFont_size;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: $smallFont_size;
+    width: 50%;
+    text-align: center;
+  }
+
+  button {
+    background-color: $red_color;
+    margin-top: 40px;
+  }
+}
