@@ -1,22 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ReactImageGallery from 'react-image-gallery';
 
 import Background from '../components/Background';
 
 import '../styles/pages/ProjectPage.scss';
+import 'react-image-gallery/styles/scss/image-gallery.scss';
 
 const ProjectPage = (props) => {
   const { id } = props.match.params;
-  const {
-    title,
-    service,
-    description,
-    imageSrc,
-    mainUrl,
-    mainButton,
-    repository,
-  } = props.projects.find((project) => project.id == id);
+  const { name, service, description, mainImage, video, demo, repo, images } = props.projects.find(
+    (project) => project._id == id
+  );
+
+  const carouselItems = images.map((url) => ({ thumbnail: url, original: url }));
+
   return (
     <>
       <Background />
@@ -24,29 +23,48 @@ const ProjectPage = (props) => {
         <Link to='/' className='projectPage__goBack'>
           ← Go back
         </Link>
-        <h1 className='projectPage__title'>{title}</h1>
+        <h1 className='projectPage__title'>{name}</h1>
         <h4 className='projectPage__service'>{service}</h4>
         <div className='projectPage__hero'>
-          <img src={imageSrc} alt='' className='projectPage__hero--img' />
+          <img src={mainImage} alt='' className='projectPage__hero--img' />
           <div className='projectPage__hero--buttons'>
-            {repository.map((repo, index) => (
-              <a href={repo.url} target='_blank' rel='noopener noreferrer'>
-                <button
-                  key={index}
-                  className='projectPage__hero--buttons__repoButton'
-                >
-                  {repo.name}
-                </button>
-              </a>
-            ))}
-            <a href={mainUrl} target='_blank' rel='noopener noreferrer'>
-              <button className='projectPage__hero--buttons__appButton'>
-                {mainButton}
-              </button>
+            <a
+              href={repo}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button projectPage__hero--buttons__repoButton'
+            >
+              Repository
+            </a>
+            <a
+              href={demo}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button projectPage__hero--buttons__demoButton'
+            >
+              Demo
             </a>
           </div>
         </div>
-        <p className='projectPage__description'>{description}</p>
+        <div className='projectPage__description'>
+          {description.split('\n').map((para, i) => (
+            <React.Fragment key={i}>
+              <p>{para}</p>
+              <br />
+            </React.Fragment>
+          ))}
+        </div>
+        {images.length ? (
+          <>
+            <h1 style={{ textDecoration: 'underline' }}>Media</h1>
+            <br />
+            <h2>Video</h2>
+            {video ? <video src={video} controls className='projectPage__video' /> : null}
+            <br />
+            <h2 style={{ marginBottom: '10px' }}>Images</h2>
+            <ReactImageGallery items={carouselItems} />
+          </>
+        ) : null}
       </div>
     </>
   );

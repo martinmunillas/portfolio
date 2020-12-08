@@ -1,5 +1,14 @@
 @import '../Vars.scss';
 
+.image-gallery-thumbnail,
+.image-gallery-thumbnail-image {
+  border-radius: 10px;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+  border-radius: 20px;
+}
+
 .projectPage {
   margin: 100px 0;
 
@@ -26,11 +35,8 @@
       top: -60px;
       left: -10px;
 
-      button {
-        margin-left: 5px;
-      }
-
-      &__appButton {
+      &__demoButton {
+        margin-left: 10px;
         background-color: $blue_color;
       }
     }
@@ -49,6 +55,12 @@
     font-family: sans-serif;
     font-weight: 100;
     font-size: 20px;
+  }
+
+  &__video {
+    border-radius: 20px;
+    width: 100%;
+    margin: 20px 0;
   }
 }
 

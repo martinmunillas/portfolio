@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+
+import { sendMessage } from '../redux/actions';
 
 import '../styles/components/MessageForm.scss';
 
-const MessageForm = () => {
+const MessageForm = (props) => {
   const [form, setForm] = useState({});
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // axios({
-    //   method: 'post',
-    //   url: '/send/newMessage',
-    //   body: form,
-    // });
-    e.target.reset()
+    e.preventDefault();
+    props.sendMessage(form);
+    e.target.reset();
   };
 
   const handleChange = (e) => {
@@ -26,17 +24,16 @@ const MessageForm = () => {
   return (
     <form className='messageForm' onSubmit={handleSubmit}>
       <h1 className='messageForm__formName'>Leave me a message </h1>
-      <p>(Working soon, send me an email for now)</p>
       <div className='messageForm__fields'>
         <div>
           <label>Name</label>
-          <input name="name" onChange={handleChange} type='text' />
+          <input name='name' onChange={handleChange} type='text' />
           <label>Email</label>
-          <input name="email" onChange={handleChange} type='text' />
+          <input name='email' onChange={handleChange} type='text' />
         </div>
         <div>
           <label>Message</label>
-          <textarea name="message" onChange={handleChange} type='text' />
+          <textarea name='message' onChange={handleChange} type='text' />
         </div>
       </div>
       <button type='submit' className='messageForm__submit'>
@@ -46,4 +43,8 @@ const MessageForm = () => {
   );
 };
 
-export default MessageForm;
+const mapDispatch = {
+  sendMessage,
+};
+
+export default connect(null, mapDispatch)(MessageForm);

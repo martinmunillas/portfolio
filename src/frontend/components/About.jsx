@@ -18,7 +18,7 @@ class About extends Component {
           </h1>
           <Fade bottom>
             <p className='about__content--text'>
-              {data.abouttext.map((paragraph, index) => (
+              {data.aboutMessage.split('\n').map((paragraph, index) => (
                 <React.Fragment key={index}>
                   <br />
                   <br /> {paragraph}
@@ -27,11 +27,9 @@ class About extends Component {
             </p>
           </Fade>
         </div>
-        {data.ShowAboutImage ? (
-          <div className='about__image'>
-            <img src={data.aboutImage} alt='about image' />
-          </div>
-        ) : null}
+        <div className='about__image'>
+          <img src={data.aboutImage} alt='about image' />
+        </div>
       </div>
     );
   }
@@ -39,7 +37,7 @@ class About extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state,
+    data: state.info,
   };
 };
 

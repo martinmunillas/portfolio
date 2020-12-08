@@ -39,6 +39,17 @@ button {
   cursor: pointer;
 }
 
+.button {
+  color: white;
+  background-color: #222;
+  border-radius: 30px;
+  border: none;
+  min-width: 150px;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
 @media (max-width: 1000px) {
   body {
     padding: 0 10%;

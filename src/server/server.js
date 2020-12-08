@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { createStore, getState } from 'redux';
 import { StaticRouter, Route } from 'react-router-dom';
 import helmet from 'helmet';
+import axios from 'axios';
 
 //frontend
 import reducer from '../frontend/redux/reducer';
@@ -25,7 +26,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
-const { PORT, ENV } = process.env;
+const { PORT, ENV, API_URL } = process.env;
 
 if (ENV === 'development') {
   console.log('Running on development');
@@ -59,25 +60,38 @@ const setResponse = (html, preloadedState, manifest) => {
     <body>
         <div id="root">${html}</div>
         <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-          /</g,
-          '\\u003c'
-        )}
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
         <script src="${mainBuild}"></script>
     </body>
     </html>`;
 };
 
-const renderApp = (req, res) => {
-  const initialState = mockState;
-  const store = createStore(reducer, initialState);
+const renderApp = async (req, res) => {
+  const initialState = async () => {
+    try {
+      const projects = await axios({
+        method: 'get',
+        url: `${API_URL}/api/projects`,
+      });
+
+      const info = await axios({
+        method: 'get',
+        url: `${API_URL}/api/info`,
+      });
+
+      return { info: info.data.data, projects: projects.data.data };
+    } catch (error) {
+      return {};
+    }
+  };
+  const store = createStore(reducer, await initialState());
   const preloadedState = store.getState();
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        {routes.map((route) => (
-          <Route {...route} key={route.path} />
+        {routes.map((route, i) => (
+          <Route {...route} key={route.path || i} />
         ))}
       </StaticRouter>
     </Provider>
@@ -85,6 +99,14 @@ const renderApp = (req, res) => {
 
   res.send(setResponse(html, preloadedState, req.hashManifest));
 };
+
+app.post('/sendMessage', (req, res) => {
+  axios({
+    method: 'post',
+    url: `${API_URL}/api/messages`,
+    data: req.body,
+  });
+});
 
 app.get('*', (req, res, next) => {
   renderApp(req, res);

@@ -8,11 +8,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 require('dotenv').config();
 
-const { ENV } = process.env;
+const { ENV, API_URL } = process.env;
 const isDev = ENV === 'development';
 const entry = ['./src/frontend/index.js'];
-
-
 
 module.exports = {
   entry,
@@ -60,10 +58,7 @@ module.exports = {
 
     !isDev
       ? new CleanWebpackPlugin({
-          cleanOnceBeforeBuildPatterns: path.resolve(
-            __dirname,
-            'src/server/public/build'
-          ),
+          cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'src/server/public/build'),
         })
       : () => {},
 
