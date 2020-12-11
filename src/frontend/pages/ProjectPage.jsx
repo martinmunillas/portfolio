@@ -54,15 +54,23 @@ const ProjectPage = (props) => {
             </React.Fragment>
           ))}
         </div>
-        {images.length ? (
+        {images.length || video ? (
           <>
             <h1 style={{ textDecoration: 'underline' }}>Media</h1>
             <br />
-            <h2>Video</h2>
-            {video ? <video src={video} controls className='projectPage__video' /> : null}
+            {video ? (
+              <>
+                <h2>Video</h2>
+                <video src={video} controls className='projectPage__video' />
+              </>
+            ) : null}
             <br />
-            <h2 style={{ marginBottom: '10px' }}>Images</h2>
-            <ReactImageGallery items={carouselItems} />
+            {images.length ? (
+              <>
+                <h2 style={{ marginBottom: '10px' }}>Images</h2>
+                <ReactImageGallery items={carouselItems} />
+              </>
+            ) : null}
           </>
         ) : null}
       </div>
