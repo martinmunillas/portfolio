@@ -6,8 +6,7 @@ import MessageForm from './MessageForm';
 
 import '../styles/components/Contact.scss';
 
-const Contact = (props) => {
-  const { data } = props;
+const Contact = ({ data: { contactText, email, github, linkedin, youtube } }) => {
   return (
     <div className='contact'>
       <h1 className='contact__header'>
@@ -18,17 +17,34 @@ const Contact = (props) => {
       <Fade bottom>
         <div className='contact__content'>
           <h1 className='contact__content--title'>
-            {data.contactText[0]}<br></br>
-            <span className='contact__content--title__amazingText'>{data.contactText[1]}</span>
+            {contactText[0]}
+            <br></br>
+            <span className='contact__content--title__amazingText'>{contactText[1]}</span>
           </h1>
-          <p className='contact__content--email'>{data.email}</p>
+          <p className='contact__content--email'>{email}</p>
           <MessageForm />
           <ul className='contact__content--social'>
-            <li>
-              <a target='_blank' rel='noopener noreferrer' href={data.github}>
-                Github
-              </a>
-            </li>
+            {github && (
+              <li>
+                <a target='_blank' rel='noopener noreferrer' href={github}>
+                  Github
+                </a>
+              </li>
+            )}
+            {linkedin && (
+              <li>
+                <a target='_blank' rel='noopener noreferrer' href={linkedin}>
+                  Linkedin
+                </a>
+              </li>
+            )}
+            {youtube && (
+              <li>
+                <a target='_blank' rel='noopener noreferrer' href={youtube}>
+                  Youtube
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </Fade>

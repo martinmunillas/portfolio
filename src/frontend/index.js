@@ -11,18 +11,16 @@ import reducer from './redux/reducer';
 
 const history = createBrowserHistory();
 const preloadedState = window.__PRELOADED_STATE__;
-const store = createStore(
-  reducer,
-  preloadedState,
-  compose(applyMiddleware(thunk))
-);
+const store = createStore(reducer, preloadedState, compose(applyMiddleware(thunk)));
 
-ReactDOM.hydrate(
-  <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
+window.addEventListener('load', () => {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>,
 
-  document.getElementById('root')
-);
+    document.getElementById('root')
+  );
+});

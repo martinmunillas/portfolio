@@ -82,6 +82,7 @@ const renderApp = async (req, res) => {
 
       return { info: info.data.data, projects: projects.data.data };
     } catch (error) {
+      console.log(error)
       return {};
     }
   };

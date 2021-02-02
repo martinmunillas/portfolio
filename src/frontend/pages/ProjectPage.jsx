@@ -28,22 +28,26 @@ const ProjectPage = (props) => {
         <div className='projectPage__hero'>
           <img src={mainImage} alt='' className='projectPage__hero--img' />
           <div className='projectPage__hero--buttons'>
-            <a
-              href={repo}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='button projectPage__hero--buttons__repoButton'
-            >
-              Repository
-            </a>
-            <a
-              href={demo}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='button projectPage__hero--buttons__demoButton'
-            >
-              Demo
-            </a>
+            {repo && (
+              <a
+                href={repo}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='button projectPage__hero--buttons__repoButton'
+              >
+                Repository
+              </a>
+            )}
+            {demo && (
+              <a
+                href={demo}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='button projectPage__hero--buttons__demoButton'
+              >
+                Demo
+              </a>
+            )}
           </div>
         </div>
         <div className='projectPage__description'>
