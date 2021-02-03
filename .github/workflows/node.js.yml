@@ -25,6 +25,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
-    - run: yarn audit fix
-    - run: yarn build --if-present
+    - run: yarn build
     - run: pm2 restart portfolio
