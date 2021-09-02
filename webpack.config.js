@@ -8,32 +8,32 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 require('dotenv').config();
 
-const { ENV, API_URL } = process.env;
+const { ENV } = process.env;
 const isDev = ENV === 'development';
-const entry = ['./src/frontend/index.js'];
+const entry = ['./src/frontend/index.tsx'];
 
 module.exports = {
   entry,
   mode: ENV,
   output: {
-    path: path.resolve(__dirname, 'src/server/public'),
-    filename: isDev ? 'build/app.js' : 'build/app-[hash].js',
+    path: path.resolve(__dirname, 'dist/server/public'),
+    filename: isDev ? 'assets/app.js' : 'assets/app-[hash].js',
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
         },
       },
       {
-        test: /\.(s*)css$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -45,29 +45,22 @@ module.exports = {
     ],
   },
   plugins: [
-    isDev ? new webpack.HotModuleReplacementPlugin() : () => {},
+    isDev ? new webpack.HotModuleReplacementPlugin() : () => { },
 
-    !isDev
-      ? new CompressionWebpackPlugin({
-          test: /\.js$|\.css$/,
-          filename: '[path].gz',
-        })
-      : () => {},
-
-    !isDev ? new ManifestPlugin() : () => {},
+    !isDev ? new ManifestPlugin() : () => { },
 
     !isDev
       ? new CleanWebpackPlugin({
-          cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'src/server/public/build'),
-        })
-      : () => {},
+        cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'dist/server/public/assets'),
+      })
+      : () => { },
 
     new MiniCssExtractPlugin({
-      filename: isDev ? 'build/app.css' : 'build/app-[hash].css',
+      filename: isDev ? 'assets/app.css' : 'assets/app-[hash].css',
     }),
   ],
-  optimization: {
+  optimization: !isDev ? {
     minimize: true,
     minimizer: [new TerserWebpackPlugin()],
-  },
+  } : undefined,
 };

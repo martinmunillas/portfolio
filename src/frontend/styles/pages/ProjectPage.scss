@@ -1,4 +1,4 @@
-@import '../Vars.scss';
+@import "../Vars.scss";
 
 .image-gallery-thumbnail,
 .image-gallery-thumbnail-image {
@@ -7,59 +7,6 @@
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
   border-radius: 20px;
-}
-
-.projectPage {
-  margin: 100px 0;
-
-  &__goBack {
-    position: absolute;
-    top: 50px;
-    left: 17%;
-  }
-
-  &__service {
-    margin: 15px 0px;
-  }
-
-  &__hero {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    &--buttons {
-      display: flex;
-      position: relative;
-      top: -60px;
-      left: -10px;
-
-      &__demoButton {
-        margin-left: 10px;
-        background-color: $blue_color;
-      }
-    }
-
-    &--img {
-      border-radius: 30px;
-      width: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
-    }
-  }
-
-  &__description {
-    margin-top: 15px;
-    font-family: sans-serif;
-    font-weight: 100;
-    font-size: 20px;
-  }
-
-  &__video {
-    border-radius: 20px;
-    width: 100%;
-    margin: 20px 0;
-  }
 }
 
 @media (max-width: 768px) {

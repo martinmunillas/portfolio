@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Box, ListItem, UnorderedList } from "@quaantum/components";
+import React from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
-import '../styles/components/Navbar.scss'
+interface NavbarProps {}
 
-class Navbar extends Component {
-  state = {};
-  scrollToTop = () => {
+const Navbar: React.FC<NavbarProps> = ({}) => {
+  const scrollToTop = () => {
     scroll.scrollToTop();
   };
-  render() {
-    return (
-      <nav>
-        <ul>
-          <li>
+
+  return (
+    <Box as='nav' position='fixed' left='60em' top='6em' zIndex={100}>
+      <UnorderedList>
+        <ListItem display='inline-block'>
+          <Box>
             <Link
-              className='link'
               activeClass='active'
               to='home'
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              onClick={this.scrollToTop}
+              onClick={scrollToTop}
             >
               Home
-            </Link>
-          </li>
-          <li>
+            </Link>{" "}
+          </Box>
+        </ListItem>
+        <ListItem display='inline-block'>
+          <Box>
             <Link
-              className='link'
               activeClass='active'
               to='about'
               spy={true}
@@ -37,11 +38,12 @@ class Navbar extends Component {
               duration={500}
             >
               About
-            </Link>
-          </li>
-          <li>
+            </Link>{" "}
+          </Box>
+        </ListItem>
+        <ListItem display='inline-block'>
+          <Box>
             <Link
-              className='link'
               activeClass='active'
               to='projects'
               spy={true}
@@ -50,11 +52,12 @@ class Navbar extends Component {
               duration={500}
             >
               Projects
-            </Link>
-          </li>
-          <li>
+            </Link>{" "}
+          </Box>
+        </ListItem>
+        <ListItem display='inline-block'>
+          <Box>
             <Link
-              className='link'
               activeClass='active'
               to='contact'
               spy={true}
@@ -63,12 +66,12 @@ class Navbar extends Component {
               duration={500}
             >
               Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    );
-  }
-}
+            </Link>{" "}
+          </Box>
+        </ListItem>
+      </UnorderedList>
+    </Box>
+  );
+};
 
 export default Navbar;
