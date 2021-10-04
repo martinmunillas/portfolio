@@ -52,36 +52,41 @@ const MessageForm: React.FC<MessageFormProps> = () => {
       align='flex-end'
       bgColor='#222'
       p='40px'
-      br='20px'
+      r='20px'
       color='white'
       onSubmit={handleSubmit}
     >
       <Heading alignSelf='flex-start'>Leave me a message </Heading>
-      <Flex justify='space-between' w='100%'>
-        <Flex direction='column' w='48%'>
-          <Box as='label'>Name</Box>
-          <Input
-            name='name'
-            onChange={handleChange}
-            type='text'
-            value={form.name}
-          />
-          <Box as='label'>Email</Box>
-          <Input
-            name='email'
-            onChange={handleChange}
-            type='text'
-            value={form.email}
-          />
+      <Flex justify='space-between' w='100%' mt='20px'>
+        <Flex direction='column' w='48%' gap='20px'>
+          <Flex direction='column'>
+            <Box as='label'>Name</Box>
+            <Input
+              name='name'
+              onChange={handleChange}
+              type='text'
+              value={form.name}
+            />
+          </Flex>
+          <Flex direction='column'>
+            <Box as='label'>Email</Box>
+            <Input
+              name='email'
+              onChange={handleChange}
+              type='text'
+              value={form.email}
+            />
+          </Flex>
         </Flex>
-        <Box>
+        <Flex direction='column' w='48%'>
           <Box as='label'>Message</Box>
           <TextArea
+            resize='vertical'
             name='message'
             onChange={handleChange}
             value={form.message}
           />
-        </Box>
+        </Flex>
       </Flex>
       <Button
         type='submit'

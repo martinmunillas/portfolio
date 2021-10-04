@@ -2,7 +2,6 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import { useSelector } from "react-redux";
 
-import "../styles/components/About.scss";
 import { hasntErrors, State } from "../redux/reducer";
 import { Box, Flex, Heading, Img, Text } from "@quaantum/components";
 
@@ -11,15 +10,15 @@ const About: React.FC = () => {
     hasntErrors(state) ? state.info : undefined
   );
   return (
-    <Flex justify='space-between' mb='100px'>
+    <Flex justify='space-between' mb='100px' id='about'>
       <Box w='60%'>
-        <Heading mb='40px'>
+        <Heading mb='40px' fontSize='3rem' fontWeight='100'>
           <Fade bottom cascade>
             About.
           </Fade>
         </Heading>
         <Fade bottom>
-          <Text>
+          <Text fontSize='2rem'>
             {info?.aboutMessage.split("\n").map((paragraph, index) => (
               <React.Fragment key={index}>
                 <br />

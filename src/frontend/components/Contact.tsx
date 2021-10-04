@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 import MessageForm from "./MessageForm";
 
-import "../styles/components/Contact.scss";
 import { hasntErrors, State } from "../redux/reducer";
 import {
   Box,
@@ -24,15 +23,15 @@ const Contact: React.FC = () => {
   const { contactText, github, email, linkedin, youtube } = info;
 
   return (
-    <Box mt='50px'>
-      <Heading mb='40px'>
+    <Box mt='80px' id='contact'>
+      <Heading mb='40px' fontSize='3rem' fontWeight='100'>
         <Fade bottom cascade>
           Contact.
         </Fade>
       </Heading>
       <Fade bottom>
         <Box>
-          <Heading>
+          <Heading fontSize='5rem'>
             {contactText[0]}
             <br></br>
             <Box
@@ -48,25 +47,27 @@ const Contact: React.FC = () => {
               {contactText[1]}
             </Box>
           </Heading>
-          <Text m='80px 0'>{email}</Text>
+          <Text m='50px 0' fontSize='3rem'>
+            {email}
+          </Text>
           <MessageForm />
-          <UnorderedList d='flex' m='50px 0'>
+          <UnorderedList d='flex' m='50px 0' gap='20px' listStyle='none'>
             {github && (
-              <ListItem m='0 20px'>
+              <ListItem>
                 <Link target='_blank' rel='noopener noreferrer' href={github}>
                   Github
                 </Link>
               </ListItem>
             )}
             {linkedin && (
-              <ListItem m='0 20px'>
+              <ListItem>
                 <Link target='_blank' rel='noopener noreferrer' href={linkedin}>
                   Linkedin
                 </Link>
               </ListItem>
             )}
             {youtube && (
-              <ListItem m='0 20px'>
+              <ListItem>
                 <Link target='_blank' rel='noopener noreferrer' href={youtube}>
                   Youtube
                 </Link>

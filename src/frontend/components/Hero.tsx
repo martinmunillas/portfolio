@@ -3,9 +3,8 @@ import Fade from "react-reveal/Fade";
 import { useSelector } from "react-redux";
 import { Link } from "react-scroll";
 
-import "../styles/components/Hero.scss";
 import { hasntErrors, State } from "../redux/reducer";
-import { Button, Flex, Heading, Text } from "@quaantum/components";
+import { Button, Flex, Heading } from "@quaantum/components";
 
 const Hero: React.FC = () => {
   const info = useSelector((state: State) =>
@@ -29,24 +28,25 @@ const Hero: React.FC = () => {
         </Heading>
       </Flex>
       <Fade bottom>
-        <Text>{info?.heroText}</Text>
+        <Heading fontSize='3rem'>
+          {info?.heroText.split(".")[0]} :)
+          <br />
+          {info?.heroText.split(".")[1]}
+        </Heading>
         <Flex mt='30px' wrap='wrap'>
           <Button
             cursor='pointer'
-            w='200px'
             b='0px'
             br='25px'
             m='10px 0'
             p='1em 3em'
             mr='20px'
-            color='blue'
+            bgColor='blue'
+            minH='0'
             customCss={`
             transition: all 0.2s ease-out;
-            -webkit-transition: all 0.2s ease-out;
-            -moz-transition: all 0.2s ease-out;
-            -ms-transition: all 0.2s ease-out;
-            -o-transition: all 0.2s ease-out;
             `}
+            flexGrow='0'
           >
             <Link
               to='contact'
@@ -60,7 +60,6 @@ const Hero: React.FC = () => {
           </Button>
           <Button
             cursor='pointer'
-            w='200px'
             b='0px'
             br='25px'
             m='10px 0'
@@ -69,10 +68,6 @@ const Hero: React.FC = () => {
             color='#222222'
             customCss={`
             transition: all 0.2s ease-out;
-            -webkit-transition: all 0.2s ease-out;
-            -moz-transition: all 0.2s ease-out;
-            -ms-transition: all 0.2s ease-out;
-            -o-transition: all 0.2s ease-out;
             `}
           >
             <a rel='noopener noreferrer' href={info?.cvUrl} target='_blank'>

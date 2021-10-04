@@ -10,12 +10,11 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
   };
 
   return (
-    <Box as='nav' position='fixed' left='60em' top='6em' zIndex={100}>
+    <Box as='nav' position='fixed' right='20%' top='6em' zIndex={100}>
       <UnorderedList>
         <ListItem display='inline-block'>
-          <Box>
+          <Box variant='linkWrapper'>
             <Link
-              activeClass='active'
               to='home'
               spy={true}
               smooth={true}
@@ -28,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           </Box>
         </ListItem>
         <ListItem display='inline-block'>
-          <Box>
+          <Box variant='linkWrapper'>
             <Link
               activeClass='active'
               to='about'
@@ -42,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           </Box>
         </ListItem>
         <ListItem display='inline-block'>
-          <Box>
+          <Box variant='linkWrapper'>
             <Link
               activeClass='active'
               to='projects'
@@ -56,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           </Box>
         </ListItem>
         <ListItem display='inline-block'>
-          <Box>
+          <Box variant='linkWrapper'>
             <Link
               activeClass='active'
               to='contact'

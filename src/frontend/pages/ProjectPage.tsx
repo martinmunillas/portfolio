@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ReactImageGallery from "react-image-gallery";
 import { Box, Flex, Heading, Img, Link } from "@quaantum/components";
+import { Link as RouterLink } from "react-router-dom";
 
 import Background from "../components/Background";
 
@@ -30,7 +31,14 @@ const ProjectPage: React.FC = () => {
     <>
       <Background />
       <Box m='100px 0'>
-        <Link href='/' position='absolute' top='50px' left='17%'>
+        <Link
+          // @ts-ignore
+          as={RouterLink}
+          to='/'
+          position='absolute'
+          top='50px'
+          left='17%'
+        >
           ← Go back
         </Link>
         <Heading as='h1'>{name}</Heading>

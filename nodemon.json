@@ -1,0 +1,8 @@
+{
+  "ignore": [
+    "dist/frontend/**/*",
+    "src/frontend/**/*",
+    "*app.js",
+    "*manifest.json"
+  ]
+}

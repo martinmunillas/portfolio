@@ -1,9 +1,8 @@
+import { Flex, Heading, Img, Text } from "@quaantum/components";
 import React from "react";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 import type { Project } from "../redux/reducer";
-
-import "../styles/components/ProjectItem.scss";
 
 interface ProjectItemProps extends Project {}
 
@@ -11,15 +10,19 @@ const ProjectItem: React.FC<ProjectItemProps> = (props) => {
   return (
     <Fade bottom>
       <Link to={`/projects/${props._id}`}>
-        <div className='projectItem'>
-          <img
-            src={props.mainImage}
+        <Flex direction='column' align='center' m='40px 0'>
+          <Img
+            src={"https://i.stack.imgur.com/LnEYQ.jpg"}
             alt={props.name}
-            className='projectItem__image'
+            w='400px'
+            h='400px'
+            objectFit='cover'
+            objectPosition='50% 50%'
+            r='30px:'
           />
-          <h1 className='projectItem__title'>{props.name}</h1>
-          <p className='projectItem__service'>{props.service}</p>
-        </div>
+          <Heading m='10px 0'>{props.name}</Heading>
+          <Text>{props.service}</Text>
+        </Flex>
       </Link>
     </Fade>
   );

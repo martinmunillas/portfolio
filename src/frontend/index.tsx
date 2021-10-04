@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { createBrowserHistory } from "history";
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import reducer from "./redux/reducer";
@@ -15,7 +14,6 @@ declare global {
   }
 }
 
-const history = createBrowserHistory();
 const preloadedState = window.__PRELOADED_STATE__;
 const store = createStore(
   reducer,
@@ -23,11 +21,11 @@ const store = createStore(
   compose(applyMiddleware(thunk))
 );
 
-ReactDOM.hydrate(
+ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
   </Provider>,
 
   document.getElementById("root")

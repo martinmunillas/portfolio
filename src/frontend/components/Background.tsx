@@ -1,8 +1,6 @@
 import { Heading } from "@quaantum/components";
 import React from "react";
 
-import "../styles/components/Background.scss";
-
 const Background = () => {
   return (
     <Heading
