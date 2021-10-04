@@ -70,7 +70,6 @@ export const renderApp: RequestHandler = async (req, res) => {
       </StaticRouter>
     </Provider>
   );
-
   //@ts-ignore
-  res.send(setResponse(html, preloadedState, req.hashManifest));
+  return res.send(setResponse(html, preloadedState, req.hashManifest));
 };

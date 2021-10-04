@@ -4,9 +4,7 @@ const fs = require("fs");
 
 const getObjectManifest = () => {
   try {
-    return JSON.parse(
-      fs.readFileSync(__dirname + "/../../public/manifest.json")
-    );
+    return JSON.parse(fs.readFileSync(__dirname + "/../public/manifest.json"));
   } catch (error) {
     console.log(error);
   }
