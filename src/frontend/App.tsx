@@ -35,27 +35,6 @@ const myTheme = extendTheme(theme, {
       textDecoration: "none",
       color: "#fff",
     },
-
-    button: {
-      color: "white",
-      backgroundColor: "#222",
-      borderRadius: "30px",
-      border: "none",
-      minWidth: "150px",
-      minHeight: "50px",
-      cursor: "pointer",
-    },
-
-    ".button": {
-      color: "white",
-      backgroundColor: "#222",
-      borderRadius: "30px",
-      border: "none",
-      minWidth: "150px",
-      padding: "15px",
-      cursor: "pointer",
-      textAlign: "center",
-    },
   },
   colors: {
     gray: "#dfdfdf",
@@ -86,6 +65,20 @@ const myTheme = extendTheme(theme, {
     `,
         },
       },
+    },
+    Button: {
+      base: {
+        color: "white",
+        bgColor: "#222",
+        borderRadius: "30px",
+        border: "none",
+        minWidth: "150px",
+        padding: "15px",
+        cursor: "pointer",
+        textAlign: "center",
+      },
+      variants: {},
+      defaultVariant: "",
     },
     Input: {
       base: {

@@ -8,6 +8,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Background from "../components/Background";
 
 import { hasntErrors, State } from "../redux/reducer";
+import { exampleImage } from "../components/ProjectItem";
 
 const ProjectPage: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
@@ -30,37 +31,60 @@ const ProjectPage: React.FC = () => {
   return (
     <>
       <Background />
-      <Box m='100px 0'>
+      <Box m="100px 0">
         <Link
           // @ts-ignore
           as={RouterLink}
-          to='/'
-          position='absolute'
-          top='50px'
-          left='17%'
+          to="/"
+          position="absolute"
+          top="50px"
+          left="17%"
+          customCss={`@media (max-width: 768px) {
+              & {
+                left: 7%;
+              }}`}
         >
           ← Go back
         </Link>
-        <Heading as='h1'>{name}</Heading>
-        <Heading as='h4' m='15px 0px'>
+        <Heading as="h1">{name}</Heading>
+        <Heading as="h4" m="15px 0px">
           {service}
         </Heading>
-        <Flex w='100%' direction='column' align-items='flex-end'>
+        <Flex w="100%" direction="column" alignItems="flex-end">
           <Img
-            src={mainImage}
+            src={exampleImage || mainImage}
             alt={name}
-            br='30px'
-            w='100%'
-            objectFit='cover'
-            objectPosition='center center'
+            br="30px"
+            w="100%"
+            objectFit="cover"
+            objectPosition="center center"
           />
-          <Flex position='relative' top='-60px' left='-10px'>
+          <Flex
+            position="relative"
+            top="-60px"
+            left="-10px"
+            customCss={`
+        @media (max-width: 768px) {
+          & {
+                margin: 10px 0;
+                position: initial;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+                button {
+                  margin: 7px 0;
+                }
+              }
+            
+          }
+        `}
+          >
             {repo && (
               <Link
                 href={repo}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='button projectPage__hero--buttons__repoButton'
+                styleAs="Button"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Repository
               </Link>
@@ -68,17 +92,18 @@ const ProjectPage: React.FC = () => {
             {demo && (
               <Link
                 href={demo}
-                target='_blank'
-                rel='noopener noreferrer'
-                ml='19px'
-                color='blue'
+                styleAs="Button"
+                target="_blank"
+                rel="noopener noreferrer"
+                ml="19px"
+                bgColor="blue"
               >
                 Demo
               </Link>
             )}
           </Flex>
         </Flex>
-        <Box mt='15px' fontWeight='100' fontSize='20px'>
+        <Box mt="15px" fontWeight="100" fontSize="20px">
           {description.split("\n").map((para, i) => (
             <React.Fragment key={i}>
               <p>{para}</p>
@@ -86,28 +111,28 @@ const ProjectPage: React.FC = () => {
             </React.Fragment>
           ))}
         </Box>
-        {images.length || video ? (
+        {false && (images.length || video) ? (
           <>
-            <Heading textDecoration='underline'>Media</Heading>
+            <Heading textDecoration="underline">Media</Heading>
             <br />
             {video ? (
               <>
                 <Heading>Video</Heading>
                 <Box
-                  as='video'
+                  as="video"
                   // @ts-ignore
                   src={video}
                   controls
-                  br='20px'
-                  w='100%'
-                  m='20px 0'
+                  br="20px"
+                  w="100%"
+                  m="20px 0"
                 />
               </>
             ) : null}
             <br />
             {images.length ? (
               <>
-                <Heading as='h2' mb='10px'>
+                <Heading as="h2" mb="10px">
                   Images
                 </Heading>
                 <ReactImageGallery items={carouselItems} />
